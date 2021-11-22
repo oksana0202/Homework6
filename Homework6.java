@@ -1,5 +1,5 @@
 /**
- * JAVA 1 Homework6
+ * JAVA 1 Homework 6
  * 
  * @author Oksana Ilyakova
  * @version 22.11.2021
@@ -7,8 +7,8 @@
 
 class Homework6 {
     public static void main(String[] args) {
-        Cat cat = new Cat("Bars", "200", "false");
-        Dog dog = new Dog("Alma", "500", "10");
+        Cat cat = new Cat ("Barsik", "200", "false");
+        Dog dog = new Dog ("Alma", "500", "10");
 
         IAnimal[] animals = {cat, dog};
         for (IAnimal animal : animals) {
@@ -17,35 +17,31 @@ class Homework6 {
     }
 }
 
-abstract class Animal implements IAnimal {
+abstract class Animal {
     protected String name;
-    protected int runMaxLength;
-    protected int swimMaxLength;
+    protected int runLength;
+    protected int swimLength;
 
-    Animal (String name, int runMaxLength, int swimMaxLength) {
+    Animal (String name, int runLength, int swimLength) {
         this.name= name;
-        this.runMaxLength = runMaxLength;
-        this.swimMaxLength = swimMaxLength;
+        this.runLength = runLength;
+        this.swimLength = swimLength;
     }
 
     @Override
     public String toString(){
-        return (name + ", " + runMaxLength + ", " + swimMaxLength);
+        return (name + ", " + runLength + ", " + swimLength);
     }
 }
 
-class Cat extends Animal {
-    private final int runMaxLength = 200;
-    Cat(String name, int runMaxLength, int swimMaxLength) {
-        super(name, runMaxLength, swimMaxLength);
+    class Cat extends Animal {
+    Cat(String name, int runLength, int swimMaxLength) {
+        super(name, runLength, 0);
     }
 }
 
-
-class Dog extends Animal {
-    private final int runMaxLength = 500;
-    private final int swimMaxLength = 10
-    Dog(String name, int runMaxLength, int swimMaxLength) {
-        super(name, runMaxLength, swimMaxLength);
+    class Dog extends Animal {
+    Dog(String name, int runLength, int swimLength) {
+        super(name, runLength, swimLength);
     }
 }
