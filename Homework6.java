@@ -7,8 +7,8 @@
 
 class Homework6 {
     public static void main(String[] args) {
-        Cat cat = new Cat ("Barsik", "200", "false");
-        Dog dog = new Dog ("Alma", "500", "10");
+        Cat cat = new Cat("Barsik", "200", "false");
+        Dog dog = new Dog("Alma", "500", "10");
 
         IAnimal[] animals = {cat, dog};
         for (IAnimal animal : animals) {
